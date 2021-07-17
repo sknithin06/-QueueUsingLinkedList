@@ -28,6 +28,16 @@ public class QueueLinkedList {
 		 currentSize++;
 		 System.out.println(num+ " added to the queue");
 	}    
+	public int dequeue(){
+		 int num = front.num;
+		 front = front.next;
+		 if (isEmpty()) {
+			 rear = null;
+		 }
+		 currentSize--;
+		 System.out.println(num+ " removed from the queue");
+		 return num;
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to Queue Problems");
 		
@@ -35,5 +45,9 @@ public class QueueLinkedList {
 		list.enqueue(56);
 		list.enqueue(30);
 		list.enqueue(70);
+		
+		list.dequeue();
+		list.dequeue();
+		list.dequeue();
 	}
 }
